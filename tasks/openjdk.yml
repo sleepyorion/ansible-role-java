@@ -1,0 +1,11 @@
+
+- name: install openjdk package
+  yum:
+    name: "{{ package }}"
+    state: present
+  with_items: "{{ openjdk_packages }}"
+  loop_control:
+    loop_var: package
+  become: yes
+
+- include: "set_java_home.yml"

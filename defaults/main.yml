@@ -1,0 +1,3 @@
+java_install_flavor: "oracle"
+java_home: "/usr/lib/jvm/java"
+jdk_version: 6

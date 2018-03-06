@@ -1,0 +1,21 @@
+- name: Set Java home for oracle
+  set_fact:
+    java_home: "/usr/lib/jvm/java"
+  when: java_install_flavor == "oracle"
+
+- name: Set Java home for oracle_rpm
+  set_fact:
+    java_home: "/usr/java/latest"
+  when: java_install_flavor == "oracle_rpm"
+
+- name: Set Java home for openjdk
+  set_fact:
+    java_home: "/usr/lib/jvm/java-1.{{jdk_version}}.0"
+  when: java_install_flavor == "openjdk"
+
+- name: Set openjdk packages 
+  set_fact:
+    openjdk_packages:
+      - "java-1.{{jdk_version}}.0-openjdk"
+      - "java-1.{{jdk_version}}.0-openjdk-devel"
+  when: java_install_flavor == "openjdk"
