@@ -1,13 +1,5 @@
 
 - include: "SetFacts_{{ansible_os_family}}.yml"
 
-- debug:
-    msg: "blah blah {{ java_home }}"
-
-- debug:
-    msg: "{{ openjdk_packages }}"
-  when: java_install_flavor == "openjdk"
-
-
 - include: "openjdk.yml"
-  whehn: java_install_flavor == "openjdk"
+  when: java_install_flavor == "openjdk"

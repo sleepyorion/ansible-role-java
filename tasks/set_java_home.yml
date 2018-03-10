@@ -2,8 +2,6 @@
 
 # make sure /etc/profile.d directory exists
 
-# template /etc/profile.d/jdk.sh
-
 - name: Create /etc/profile.d/jdk.sh
   template: src=jdk.sh.j2 dest=/etc/profile.d/jdk.sh
   become: yes
